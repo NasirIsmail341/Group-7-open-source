@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Contributions - Hausa–English Dictionary Translator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: #006400;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s
+    }
+
+    .card:hover {
+      transform: translate(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #006400;
+      font-size: 1.3rem;
+    }
+
+    .role {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Added styling for search bar */
+    .search-box {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .search-box input {
+      width: 60%;
+      max-width: 400px;
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Team Contributions</h1>
+    <p>Hausa–English Dictionary Translator Project</p>
+    <a href="hausaenglish.html"><b>Home</b></a>
+  </header>
+
+  <div class="container">
+    
+    <!-- 🔍 Search functionality added -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search by name, matric number, or role...">
+    </div>
+
+    <div class="team" id="teamList">
+
+      <div class="card">
+        <h3>IBRAHIM MUAZZAM YAHAYA<br>FCP/CSE/22/2001</h3>
+        <p class="role">Project Lead & UI</p>
+        <p>Coordinated the project, developed core dictionary search functionality, and ensured smooth integration of Hausa–English translations.</p>
+      </div>
+
+      <div class="card">
+        <h3>NASIR ISMAIL<br>FCP/CSE/20/1071</h3>
+        <p class="role">Teamcontribution page Designer</p>
+        <p>Design Contributions page. and search byname,reg number or role Backend functionality using Javascript</p>
+      </div>
+
+      <div class="card">
+        <h3>Fatima Khalid Abdullahi<br>FCP/CSE/22/2005</h3>
+        <p class="role">Added 10 words</p>
+        <p>Added 10 transalted Hausa to the project</p>
+      </div>
+
+      <div class="card">
+        <h3>SULAIMAN DAHIRU <br> FCP/CSE/22/2002</h3>
+        <p class="role">Search Box Filters</p>
+        <p>I added search box functionality to filter words</p>
+      </div>
+
+      <div class="card">
+        <h3> SAADATU USMAN <br> FCP/CSE/22/2009</h3>
+        <p class="role">added 10 words</p>
+        <p>I added 10 missing word to the project.</p>
+      </div>
+
+      <div class="card">
+        <h3>SAMINU ALI<br>FCP/CSE/22/2004</h3>
+        <p class="role">Added 10 word</p>
+        <p>I added 10 missing word to the project.</p>
+      </div>
+
+      <div class="card">
+        <h3>AHMAD MUKHTAR<br>FCP/CSE/20/1070</h3>
+        <p class="role">Fix Errors</p>
+        <p>I have checked error and spelling</p>
+      </div>
+
+      <div class="card">
+        <h3>IBRAHIM AUWAL ALI <br> FCP/CSE/20/1068</h3>
+        <p class="role">Added 10 words</p>
+        <p>I added 10 missing word to the project.</p>
+      </div>
+      
+      <div class="card">
+        <h3>TESLIM RAJI<br>FCP/CSE/20/1069</h3>
+        <p class="role">Added 10 words</p>
+        <p>I added 10 missing word to the project.</p>
+      </div>
+
+      <div class="card">
+        <h3>SAFIYAN IBRAHIM<br>FCP/CSE/19/2003</h3>
+        <p class="role">Added 10 words</p>
+        <p>i added 10  missing words.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Hausa–English Dictionary Translator By Group 7 open-source| All Rights Reserved
+  </footer>
+
+  <!-- 🧠 Simple JavaScript Backend Simulation -->
+  <script>
+    // Backend-like dynamic search functionality
+    const searchInput = document.getElementById('searchInput');
+    const teamList = document.getElementById('teamList');
+    const cards = teamList.getElementsByClassName('card');
+
+    searchInput.addEventListener('keyup', function() {
+      const filter = searchInput.value.toLowerCase();
+
+      Array.from(cards).forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (text.includes(filter)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+
+    // Simulated backend “data fetch” using localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+      let visitCount = localStorage.getItem('visits') || 0;
+      visitCount++;
+      localStorage.setItem('visits', visitCount);
+      console.log(`You have visited this page ${visitCount} times.`);
+    });
+  </script>
+
+</body>
+</html>

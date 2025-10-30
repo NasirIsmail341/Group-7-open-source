@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hausa–English Dictionary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+    footer {
+      background: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .container {
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 600px;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hausa–English Dictionary</h1>
+    <p>A simple open-source bilingual dictionary By Group 7</p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="teamcontribution.html"><b>Team Contributions</b></a>
+  </header>
+
+  <div class="container">
+    <input type="text" id="search" placeholder="Search for a word..." onkeyup="searchWord()">
+
+    <table id="dictionary">
+      <thead>
+        <tr>
+          <th>Hausa</th>
+          <th>English</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Sannu</td><td>Hello</td></tr>
+        <tr><td>Na gode</td><td>Thank you</td></tr>
+        <tr><td>Kai</td><td>You</td></tr>
+        <tr><td>Ni</td><td>Me/I</td></tr>
+        <tr><td>Gida</td><td>House</td></tr>
+        <tr><td>Abinci</td><td>Food</td></tr>
+        <tr><td>Ruwa</td><td>Water</td></tr>
+        <tr><td>Kudi</td><td>Money</td></tr>
+        <tr><td>Ilmi</td><td>Knowledge</td></tr>
+        <tr><td>Lafiya</td><td>Health</td></tr>
+        <tr><td>Ina</td><td>Where</td></tr>
+        <tr><td>Yaya</td><td>How</td></tr>
+        <tr><td>lokaci</td><td>Time</td></tr>
+        <tr><td>Rana</td><td>Day</td></tr>
+        <tr><td>Zuciya</td><td>Heart</td></tr>
+        <tr><td>Iyali</td><td>Family</td></tr>
+        <tr><td>Makarnta</td><td>School</td></tr>
+        <tr><td>Gobe</td><td>Tommorow</td></tr>
+        <tr><td>Hannu</td><td>Hand</td></tr>
+        <tr><td>Lafiya</td><td>Health</td></tr>
+        <tr><td>Ido</td><td>Eye</td></tr>
+        <tr><td>Kunne</td><td>Ear</td></tr>
+        <tr><td>Hanci</td><td>Nose</td></tr>
+        <tr><td>Baki</td><td>Mouth</td></tr>
+        <tr><td>Gashi</td><td>Hair</td></tr>
+        <tr><td>Kai</td><td>Head</td></tr>
+        <tr><td>Tufafi</td><td>Cloth</td></tr>
+        <tr><td>Shinkafa</td><td>Rice</td></tr>
+        <tr><td>Muhalli</td><td>Home</tr>
+        <tr><td>Mutum</td><td>Human</td></tr>
+        <tr><td>Kudi</td><td>Money</td></tr>
+        <tr><td>Doki</td><td>Horse</td></tr>
+        <tr><td>Littafi</td><td>Book</td></tr>
+        <tr><td>Kofa</td><td>Door</td></tr>
+        <tr><td>Suna</td><td>Name</td></tr>
+        <tr><td>Hakuri</td><td>Patience</td></tr>
+        <tr><td>Gaskiya</td><td>Trust</td></tr>
+        <tr><td>Zumunci</td><td>Relationship</td></tr>
+        <tr><td>Arxiki</td><td>Blessing</td></tr>
+        <tr><td>Mutunci</td><td>Respect</td></tr>
+        <tr><td>Jaka</td><td>Bag</td></tr>
+        <tr><td>Asibiti</td><td>Health</td></tr>
+        <tr><td>Malami</td><td>Teacher</td></tr>
+        <tr><td>Dare</td><td>Nght</td></tr>
+        <tr><td>Barci</td><td>Sleeping</td></tr>
+        <tr><td>Rubutu</td><td>Writting</td></tr>
+        <tr><td>Kafa</td><td>Leg</td></tr>
+        <tr><td>Kujera</td><td>Chair</td></tr>
+        <tr><td>Agogo</td><td>Clock</td></tr>
+        <tr><td>Zobe</td><td>Zobe</td></tr>
+        <tr><td>Takalmi</td><td>Shoe</td></tr>
+        <tr><td>Kasuwa</td><td>Market</td></tr>
+        <tr><td>Likita</td><td>Doctor</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function searchWord() {
+      let input = document.getElementById("search").value.toLowerCase();
+      let table = document.getElementById("dictionary");
+      let rows = table.getElementsByTagName("tr");
+      
+      for (let i = 1; i < rows.length; i++) {
+        let cells = rows[i].getElementsByTagName("td");
+        let match = false;
+        for (let j = 0; j < cells.length; j++) {
+          if (cells[j]) {
+            let text = cells[j].innerText.toLowerCase();
+            if (text.indexOf(input) > -1) {
+              match = true;
+            }
+          }
+        }
+        rows[i].style.display = match ? "" : "none";
+      }
+    }
+  </script>
+  <footer>
+    &copy; 2025 Hausa–English Dictionary Translator BY Group 7 open-source | All Rights Reserved
+  </footer>
+</body>
+</html>
